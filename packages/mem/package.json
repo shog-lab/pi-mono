@@ -1,0 +1,29 @@
+{
+	"name": "@mariozechner/pi-mem",
+	"version": "0.55.1",
+	"description": "Long-term memory for pi agents",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": ["dist", "README.md"],
+	"pi": {
+		"extensions": ["./src/extension.ts"]
+	},
+	"scripts": {
+		"clean": "rm -rf dist",
+		"build": "tsgo -p tsconfig.build.json",
+		"dev": "tsgo -p tsconfig.build.json --watch --preserveWatchOutput",
+		"test": "vitest --run",
+		"prepublishOnly": "npm run clean && npm run build"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@mariozechner/pi-coding-agent": "^0.55.1",
+		"@types/node": "^22.10.5",
+		"vitest": "^3.2.4"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"license": "MIT"
+}
